@@ -32,4 +32,4 @@ The scraper will extract the following fields
 | LED light silent disco headphones RF-309                                                                            | US $10.00-$30.00   | 100 Pieces    | 13YRS                   | Shenzhen Go-On Electronics Co., Ltd.           | 77.90%               | 0.5               | https://www.alibaba.com/product-detail/LED-light-silent-disco-headphones-RF_1316830410.html?s=p             | headphones  |
 
 ## Learn more about the scraper 
-You can read more on how this scraper was built 
+You can read more on how this scraper was built here https://www.scrapehero.com/scrape-alibaba-using-scrapy/
