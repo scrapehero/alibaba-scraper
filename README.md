@@ -1,8 +1,8 @@
 # Scrape Alibaba.com search results using Scrapy
 
 ## Requirements 
-Python 3 
-Scrapy
+- Python 3 
+- Scrapy
 
 ## Running the Scraper
 
