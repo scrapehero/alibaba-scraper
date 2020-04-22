@@ -1,0 +1,27 @@
+products:
+    css: 'div[data-content="productItem"]'
+    multiple: true
+    type: Text
+    children:
+        name:
+            css: a.organic-gallery-title
+            type: Text
+        price:
+            css: 'p.gallery-offer-price span'
+            type: Text
+        seller_name:
+            css: a.organic-gallery-offer__seller-company
+            type: Text
+        seller_years:
+            css: span.seller-tag__year
+            type: Text
+        seller_response_rate:
+            css: span.seller-tag__response-rate
+            type: Text
+        image:
+            css: 'a.organic-gallery-offer__img-section img'
+            type: Attribute
+            attribute: src
+        link:
+            css: a.organic-gallery-title
+            type: Link
