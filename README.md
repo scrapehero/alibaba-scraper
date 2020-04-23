@@ -17,6 +17,7 @@ The scraper will extract the following fields
 ## Requirements 
 - Python 3 
 - Scrapy
+- Selectorlib 
 
 ## Running the Scraper
 
