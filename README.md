@@ -6,12 +6,13 @@ A scrapy spider to extract the following fields from any search result page of a
 
 The scraper will extract the following fields 
 - Product Name
-- Price Range (in US dollars)
+- Price Range
+- Product Image
+- Link to Product
 - Minimum Order
 - Seller Name
 - Seller Response Rate
 - Number of years as a seller on Alibaba
--Transactional Level
 
 ## Requirements 
 - Python 3 
@@ -20,16 +21,18 @@ The scraper will extract the following fields
 ## Running the Scraper
 
 1. Add search keyword to [keywords.csv](https://github.com/scrapehero/alibaba-scraper/blob/master/scrapy_alibaba/resources/keywords.csv)
-2. Run command `scrapy crawl alibaba_crawler -o out.csv -t csv` to get data as CSV into a file called out.csv or `scrapy crawl alibaba_crawler -o out.json -t json` to get data as JSON File. 
+1. Modify max_pages variable from [alibaba_crawler.py](scrapy_alibaba/spiders/alibaba_crawler.py), to the maximum number of pages to scrape data from. The default is 5 pages.
+1. Run command `scrapy crawl alibaba_crawler -o out.csv -t csv` to get data as CSV into a file called out.csv or `scrapy crawl alibaba_crawler -o out.json -t json` to get data as JSON File. 
 
 ## Sample Output 
-| product_name                                                                                                        | product_price      | minimum_order | seller_years_on_alibaba | seller_name                                    | seller_response_rate | transaction_level | product_link                                                                                                | search_text |
-|---------------------------------------------------------------------------------------------------------------------|--------------------|---------------|-------------------------|------------------------------------------------|----------------------|-------------------|-------------------------------------------------------------------------------------------------------------|-------------|
-| high quality wireless bluetooth headphone   bluetooth sport wireless with mic                                       | US $4.90-$5.40     | 500 Pieces    | 1 YR                    | Shantou City Liangying Industrial Ltd.         | 97.40%               | 2                 | https://www.alibaba.com/product-detail/high-quality-wireless-bluetooth-headphone-bluetooth_60774817269.html | headphones  |
-| RadioEar B71W bone conduction headphones   for audiometer, B71W Bone Transducer Headset                             | US $275.00-$290.00 | 1 Piece       | 6YRS                    | Guangzhou Melison Medical Instrument Co., Ltd. | 87.00%               | 1.5               | https://www.alibaba.com/product-detail/RadioEar-B71W-bone-conduction-headphones-for_805556758.html?s=p      | headphones  |
-| SODO Flip Speaker Headphone Wholesale OEM   Over Ear Sport Mobile Bluetooth Wireless Headphone                      | US $18.80-$25.00   | 4 Pieces      | 4YRS                    | Shenzhen Ditmo Electronic Technology Co., Ltd. | 92.70%               | 3                 | https://www.alibaba.com/product-detail/SODO-Flip-Speaker-Headphone-Wholesale-OEM_60740074052.html?s=p       | headphones  |
-| August over ear bluetooth wireless stereo   headphones with EQ APP Control Bass Rich Sound Headset with NFC/aptX-LL | US $23.20-$29.76   | 10 Pieces     | 1 YR                    | Shenzhen August Digital Ltd.                   |                      | 0                 | https://www.alibaba.com/product-detail/August-over-ear-bluetooth-wireless-stereo_60815054687.html?s=p       | headphones  |
-| LED light silent disco headphones RF-309                                                                            | US $10.00-$30.00   | 100 Pieces    | 13YRS                   | Shenzhen Go-On Electronics Co., Ltd.           | 77.90%               | 0.5               | https://www.alibaba.com/product-detail/LED-light-silent-disco-headphones-RF_1316830410.html?s=p             | headphones  |
+
+|name                                                                                                                                                         |price        |seller_name                                        |seller_years|seller_response_rate|image                                                                           |link                                                                                                       |
+|-------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------|---------------------------------------------------|------------|--------------------|--------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------|
+|New private model fashion promotion wireless charging function X6 Pixart PAU1603 wireless Earphone earphone headphone for sports                             |$12.05-$13.85|Shenzhen Eriwin Technology Limited                 |11 YRS      |                    |https://s.alicdn.com/@sc01/kf/H6d02bc74346b4c65ac095201bf8c3a0e0.jpg_300x300.jpg|https://www.alibaba.com/product-detail/New-private-model-fashion-promotion-wireless_62393635559.html       |
+|The Great Bass Sound Noise Cancelling Headphone                                                                                                              |$14.00-$17.00|Guangzhou Artiste Technology Co., Ltd.             |7 YRS       |86.1%               |https://img.alicdn.com/tfs/TB1S_7kkY5YBuNjSspoXXbeNFXa-700-700.jpg_350x350.jpg  |https://www.alibaba.com/product-detail/The-Great-Bass-Sound-Noise-Cancelling_62446550917.html?s=p          |
+|Bluetooth Headphone Ear over Ear Comfortable Protein Earpad Matte Finish Premium Rechargeable Bulit-In Mic Foldable Wirele Headphone Headset                 |$4.70-$6.00  |Shenzhen Zhongxu Electronics Technology Co., Ltd.  |7 YRS       |91.8%               |https://img.alicdn.com/tfs/TB1S_7kkY5YBuNjSspoXXbeNFXa-700-700.jpg_350x350.jpg  |https://www.alibaba.com/product-detail/Bluetooth-Headphone-Ear-over-Ear-Comfortable_62282896949.html?s=p   |
+|Bluetooth Headphone Earphone in Ear Wireless Earphones Mini in Ear Tws Fone De Ouvido Wireless Bluetooth Handsfree Magnetic Earbud Headphone Earphone Headset|$2.79-$29.99 |Dongguan Youtuo Electronic Technology Co., Ltd.    |1 YRS       |91.9%               |https://img.alicdn.com/tfs/TB1S_7kkY5YBuNjSspoXXbeNFXa-700-700.jpg_350x350.jpg  |https://www.alibaba.com/product-detail/Bluetooth-Headphone-Earphone-in-Ear-Wireless_62350522248.html?s=p   |
+|3 channel Silent Disco Headphone for silent party with LED lights                                                                                            |$10.00-$30.00|Shenzhen Go-On Electronics Co., Ltd.               |15 YRS      |82.3%               |https://img.alicdn.com/tfs/TB1S_7kkY5YBuNjSspoXXbeNFXa-700-700.jpg_350x350.jpg  |https://www.alibaba.com/product-detail/3-channel-Silent-Disco-Headphone-for_2015692880.html?s=p            |
 
 ## Learn more about the scraper 
 You can read more on how this scraper was built here https://www.scrapehero.com/scrape-alibaba-using-scrapy/
